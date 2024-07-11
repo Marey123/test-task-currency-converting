@@ -22,6 +22,7 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({
       <input
         disabled={isDisabled}
         type="number"
+        min={0}
         className="mt-1 mr-6 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-xl"
         value={amount}
         onChange={changeAmount}
@@ -29,7 +30,7 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({
       <select
         value={value}
         onChange={onChange}
-        className="mt-1 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+        className="mt-1 block w-full px-4 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
       >
         {currencies.map((currency) => (
           <option key={currency} value={currency}>

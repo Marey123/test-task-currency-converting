@@ -1,7 +1,7 @@
 import React from "react";
-import Main from "../main/Main"
-import About from "../about/About"
-import Rates from "../rates/Rates"
+import Main from "../pages/main/Main"
+import About from "../pages/about/About"
+import Rates from "../pages/rates/Rates"
 import {
   Route,
   createBrowserRouter,

@@ -1,7 +1,11 @@
+import { ReactNode } from "react";
 import Navigation from "./Navigation";
 
+interface LayoutProps {
+  children: ReactNode;
+}
 
-const Layout = ({ children }: any) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="bg-violet-400">
       <Navigation />
