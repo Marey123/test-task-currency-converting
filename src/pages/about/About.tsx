@@ -11,49 +11,49 @@ const About = () => {
         </section>
         <div className="container bg-transparent mx-auto p-2">
           <section className="mb-8">
-            <h2 className="text-2xl font-bold mb-4">Key Features</h2>
+            <h2 className="text-2xl  font-bold mb-4">Key Features</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               <div className="bg-white p-4 rounded-lg shadow transition-transform transform hover:scale-105">
-                <h3 className="font-semibold">Real-Time Exchange Rates</h3>
+                <h3 className="font-semibold text-xl">Real-Time Exchange Rates</h3>
                 <p>
                   Stay informed with live exchange rates for over 150
                   currencies.
                 </p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow transition-transform transform hover:scale-105">
-                <h3 className="font-semibold">User-Friendly Interface</h3>
+                <h3 className="font-semibold text-xl">User-Friendly Interface</h3>
                 <p>Sleek and intuitive design for easy currency conversions.</p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow transition-transform transform hover:scale-105">
-                <h3 className="font-semibold">Historical Data</h3>
+                <h3 className="font-semibold text-xl">Historical Data</h3>
                 <p>
                   Access historical exchange rates to analyze trends over time.
                 </p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow transition-transform transform hover:scale-105">
-                <h3 className="font-semibold">Multi-Currency Support</h3>
+                <h3 className="font-semibold text-xl">Multi-Currency Support</h3>
                 <p>Convert multiple currencies at once.</p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow transition-transform transform hover:scale-105">
-                <h3 className="font-semibold">Offline Mode</h3>
+                <h3 className="font-semibold text-xl">Offline Mode</h3>
                 <p>
                   Provides recent exchange rates even without an internet
                   connection.
                 </p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow transition-transform transform hover:scale-105">
-                <h3 className="font-semibold">Currency Alerts</h3>
+                <h3 className="font-semibold text-xl">Currency Alerts</h3>
                 <p>Set up notifications for your desired exchange rates.</p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow transition-transform transform hover:scale-105">
-                <h3 className="font-semibold">Comprehensive Calculator</h3>
+                <h3 className="font-semibold text-xl">Comprehensive Calculator</h3>
                 <p>
                   Built-in calculator for quick conversions and arithmetic
                   operations.
                 </p>
               </div>
               <div className="bg-white p-4 rounded-lg shadow transition-transform transform hover:scale-105">
-                <h3 className="font-semibold">Secure and Private</h3>
+                <h3 className="font-semibold text-xl">Secure and Private</h3>
                 <p>
                   State-of-the-art encryption and security protocols to protect
                   your data.
@@ -94,7 +94,7 @@ const About = () => {
           </section>
           <section>
             <h2 className="text-2xl font-bold mb-4">Why Choose Our App?</h2>
-            <p className="mb-4">
+            <p className="mb-4 text-xl">
               Our currency converting app stands out for its accuracy,
               reliability, and ease of use. With a commitment to providing the
               best user experience, we've incorporated features that cater to
@@ -105,7 +105,7 @@ const About = () => {
             </p>
             <a
               href="#"
-              className="inline-block bg-gradient-info text-white px-6 py-3 rounded-lg transition duration-300"
+              className="text-xl inline-block bg-gradient-info text-white px-6 py-3 rounded-lg transition duration-300"
             >
               Download our currency converting app today and take control of
               your international finances. Experience the convenience of

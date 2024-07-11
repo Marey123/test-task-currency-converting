@@ -44,7 +44,7 @@ const Navigation = () => {
             <Link
               to={link.href}
               key={link.key}
-              className="regular-16 text-gray-50 text-2xl flex items-center cursor-pointer pb-1.5 transition-all"
+              className="regular-16 text-gray-50 font-semibold text-2xl flex items-center cursor-pointer pb-1.5 transition-all hover:text-violet-800"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.label}
@@ -58,7 +58,7 @@ const Navigation = () => {
           className="text-white  focus:outline-none  bg-custom-gradient p-2 rounded-md"
           onClick={toggleMenu}
         >
-          <MenuIcon isMenuOpen={isMenuOpen}/>
+          <MenuIcon isMenuOpen={isMenuOpen} />
         </button>
       </div>
     </nav>
