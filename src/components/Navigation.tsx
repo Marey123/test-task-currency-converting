@@ -24,7 +24,8 @@ const Navigation = () => {
         transition: "opacity 0.5s ease-in-out, max-height 0.5s ease-in-out",
         maxHeight: isMenuOpen ? "100vh" : "130px",
       }}
-      className={`justify-between flex max-container padding-container relative z-30 py-5 px-12 sm:px-20 xl:px-40 ${
+      className={`justify-between flex max-container padding-container relative z-30 py-5 px-12 xl:px-34 
+      ${
         isMenuOpen && "h-[100vh]"
       }`}
     >
