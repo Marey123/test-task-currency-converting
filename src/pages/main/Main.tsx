@@ -1,10 +1,9 @@
-import { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Layout from "../../components/Layout";
+import CurrencySelector from "../../components/CurrencyConverter";
 import { useCurrencyConverter } from "../../hooks/useCurrencyActions";
 import { useGetConversionedValue } from "../../hooks/useGetConversionedValue";
 import { useGetSymbols } from "../../hooks/useGetSymbols";
-import CurrencySelector from "../../components/CurrencyConverter";
-
 
 const Main = () => {
   const {
@@ -20,6 +19,7 @@ const Main = () => {
     handleQuoteCurrencyChange,
     handleChangeAmount,
   } = useCurrencyConverter();
+
   const { data: symbolData, isLoading, isPending } = useGetSymbols();
   const { data: conversionData } = useGetConversionedValue({
     amount,
@@ -27,14 +27,20 @@ const Main = () => {
     to: quoteCurrency,
   });
 
+  const prevConversionDataRef = useRef<any>(null);
+
   useEffect(() => {
     if (symbolData) {
       const currencies = Object.keys(symbolData);
       setBaseCurrency(searchParams.get("baseCurrency") || currencies[0]);
       setQuoteCurrency(searchParams.get("quoteCurrency") || currencies[1]);
-      setAmount(Number(searchParams.get("amount")) || 0);
+      setAmount(Number(searchParams.get("amount")) || 1);
     }
   }, [symbolData, searchParams]);
+
+  useEffect(() => {
+    prevConversionDataRef.current = conversionData;
+  }, [conversionData]);
 
   if (isLoading || isPending) {
     return (
@@ -48,8 +54,8 @@ const Main = () => {
   }
 
   const resultAmount = conversionData?.rates
-    ? (Object.values(conversionData.rates)[0] as number)
-    : 0;
+    ? Object.values(conversionData.rates)[0]
+    : prevConversionDataRef.current?.rates;
 
   return (
     <Layout>
@@ -74,7 +80,7 @@ const Main = () => {
                 onClick={handleSwapCurrencies}
                 className="px-4 py-2 bg-gradient-info font-semibold text-white rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
-               SWAP
+                SWAP
               </button>
             </div>
 

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Layout from "../../components/Layout";
 import { useGetSymbols } from "../../hooks/useGetSymbols";
 import CurrencySelector from "../../components/CurrencyConverter";
@@ -8,7 +8,6 @@ import RatesTable from "../../components/RatesTable";
 
 const Rates = () => {
   const { data: symbolData, isLoading, isPending } = useGetSymbols();
-
   const {
     baseCurrency,
     amount,
@@ -18,18 +17,29 @@ const Rates = () => {
     handleBaseCurrencyChange,
     handleChangeAmount,
   } = useCurrencyConverter();
+
   const { data: conversionData } = useGetConversionedValue({
     amount,
     from: baseCurrency,
   });
 
+  const prevConversionDataRef = useRef<any>(null);
+
+  const ratesData = conversionData
+  ? conversionData.rates
+  : prevConversionDataRef.current?.rates;
+
   useEffect(() => {
     if (symbolData) {
       const currencies = Object.keys(symbolData);
       setBaseCurrency(searchParams.get("baseCurrency") || currencies[0]);
-      setAmount(Number(searchParams.get("amount")) || 0);
+      setAmount(Number(searchParams.get("amount")) || 1);
     }
   }, [symbolData, searchParams]);
+
+  useEffect(() => {
+    prevConversionDataRef.current = conversionData;
+  }, [conversionData]);
 
   if (isLoading || isPending) {
     return (
@@ -46,7 +56,9 @@ const Rates = () => {
     <Layout>
       <div className="flex items-center rounded-lg justify-center bg-gray-100">
         <div className="max-w-md w-full bg-white p-6 rounded-md shadow-md">
-          <h2 className="text-3xl font-semibold text-center mb-6">Currency</h2>
+          <h2 className="text-3xl font-semibold text-center mb-6">
+            Currency Converter
+          </h2>
           {symbolData && (
             <CurrencySelector
               value={baseCurrency}
@@ -57,7 +69,7 @@ const Rates = () => {
               onChange={handleBaseCurrencyChange}
             />
           )}
-          {conversionData && <RatesTable rates={conversionData.rates} />}
+          {ratesData && <RatesTable rates={ratesData} />}
         </div>
       </div>
     </Layout>

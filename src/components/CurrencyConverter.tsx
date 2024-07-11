@@ -22,7 +22,7 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({
       <input
         disabled={isDisabled}
         type="number"
-        min={0}
+        min={1}
         className="mt-1 mr-6 block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-xl"
         value={amount}
         onChange={changeAmount}
