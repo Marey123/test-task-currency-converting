@@ -1,4 +1,5 @@
 import axios from "axios";
+import { baseUrl } from "../constants/constants";
 
 export interface ConversionedValue {
   amount?: number;
@@ -22,14 +23,14 @@ export interface ConversionedValueResult {
 }
 
 export const getAllSymbolsEndpoint = async (): Promise<CurrencyAmounts> => {
-  const response = await axios.get("https://api.frankfurter.app/currencies");
+  const response = await axios.get(`${baseUrl}currencies`);
   return response.data;
 };
 
 export const getConversionedValueEndpoint = async (
   data: ConversionedValue
 ): Promise<ConversionedValueResult> => {
-  const response = await axios.get("https://api.frankfurter.app/latest", {
+  const response = await axios.get(`${baseUrl}latest`, {
     params: {
       amount: data.amount,
       from: data.from,
