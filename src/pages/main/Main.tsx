@@ -63,7 +63,7 @@ const Main = () => {
         <div className="flex items-center rounded-lg justify-center bg-gray-100">
           <div className="max-w-md w-full bg-white p-6 rounded-md shadow-md">
             <h2 className="text-3xl font-semibold text-center mb-6">
-              Currency Converter
+              Currency Converter 🔄
             </h2>
 
             <CurrencySelector

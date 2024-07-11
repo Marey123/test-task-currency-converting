@@ -6,7 +6,7 @@ const About = () => {
     <Layout>
       <div className=" text-gray-900">
         <section className="bg-gradient-info rounded-lg text-white p-6 mb-3">
-          <h1 className="text-3xl font-bold">Currency Converting App</h1>
+          <h1 className="text-3xl font-bold">💰 Currency Converting App</h1>
           <p className="text-lg mt-2">Simplifying Global Transactions</p>
         </section>
         <div className="container bg-transparent mx-auto p-2">
@@ -93,7 +93,7 @@ const About = () => {
             </div>
           </section>
           <section>
-            <h2 className="text-2xl font-bold mb-4">Why Choose Our App?</h2>
+            <h2 className="text-2xl font-bold mb-4">Why Choose Our App? 🤷‍♀️</h2>
             <p className="mb-4 text-xl">
               Our currency converting app stands out for its accuracy,
               reliability, and ease of use. With a commitment to providing the
