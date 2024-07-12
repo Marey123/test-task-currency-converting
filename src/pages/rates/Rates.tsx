@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import Layout from "../../components/Layout";
 import { useGetSymbols } from "../../hooks/useGetSymbols";
-import CurrencySelector from "../../components/CurrencyConverter";
+import CurrencyConverter from "../../components/CurrencyConverter";
 import { useCurrencyConverter } from "../../hooks/useCurrencyActions";
 import { useGetConversionedValue } from "../../hooks/useGetConversionedValue";
 import RatesTable from "../../components/RatesTable";
@@ -60,7 +60,7 @@ const Rates = () => {
             Table Rates 🔮
           </h2>
           {symbolData && (
-            <CurrencySelector
+            <CurrencyConverter
               value={baseCurrency}
               amount={amount}
               isDisabled={false}

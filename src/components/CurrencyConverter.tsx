@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
 
-interface CurrencySelectorProps {
+interface CurrencyConverterProps {
   value: string;
   amount: number;
   currencies: string[];
@@ -9,7 +9,7 @@ interface CurrencySelectorProps {
   onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const CurrencySelector: React.FC<CurrencySelectorProps> = ({
+const CurrencyConverter: React.FC<CurrencyConverterProps> = ({
   value,
   currencies,
   amount,
@@ -42,4 +42,4 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({
   );
 };
 
-export default CurrencySelector;
+export default CurrencyConverter;

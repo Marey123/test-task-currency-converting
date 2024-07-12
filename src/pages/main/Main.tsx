@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Layout from "../../components/Layout";
-import CurrencySelector from "../../components/CurrencyConverter";
+import CurrencyConverter from "../../components/CurrencyConverter";
 import { useCurrencyConverter } from "../../hooks/useCurrencyActions";
 import { useGetConversionedValue } from "../../hooks/useGetConversionedValue";
 import { useGetSymbols } from "../../hooks/useGetSymbols";
@@ -56,7 +56,7 @@ const Main = () => {
   const resultAmount = conversionData?.rates
     ? Object.values(conversionData.rates)[0]
     : prevConversionDataRef.current?.rates[0];
-    
+
   const filteredCurrencies = (currencies: string[], symbol: string) =>
     currencies.filter((currency) => currency !== symbol);
 
@@ -69,7 +69,7 @@ const Main = () => {
               Currency Converter 🔄
             </h2>
 
-            <CurrencySelector
+            <CurrencyConverter
               value={baseCurrency}
               amount={amount}
               isDisabled={false}
@@ -90,7 +90,7 @@ const Main = () => {
               </button>
             </div>
 
-            <CurrencySelector
+            <CurrencyConverter
               value={quoteCurrency}
               amount={resultAmount}
               isDisabled={true}
