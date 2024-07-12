@@ -10,7 +10,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="bg-violet-400">
       <Navigation />
-      <main id="main" className="flex min-h-screen flex-col items-center justify-between p-24">
+      <main id="main" className="flex min-h-screen flex-col items-center justify-between">
         <div className="">{children}</div>
       </main>
       <Footer/>

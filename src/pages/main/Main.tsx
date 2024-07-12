@@ -55,8 +55,7 @@ const Main = () => {
 
   const resultAmount = conversionData?.rates
     ? Object.values(conversionData.rates)[0]
-    : prevConversionDataRef.current?.rates;
-
+    : prevConversionDataRef.current?.rates[0] || 0;
   return (
     <Layout>
       {symbolData && (

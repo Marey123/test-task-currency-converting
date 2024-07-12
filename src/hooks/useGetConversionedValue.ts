@@ -6,6 +6,8 @@ export const useGetConversionedValue = (data: ConversionedValue): UseQueryResult
   return useQuery<ConversionedValueResult>({
     queryKey: [QueryKeys.CONVERSIONED_VALUE, data],
     queryFn: () => getConversionedValueEndpoint(data),
-    enabled: data.amount !== 0
+    enabled: data.amount !== 0,
+    retry: 2
+
   })
 }
