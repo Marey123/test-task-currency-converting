@@ -55,7 +55,11 @@ const Main = () => {
 
   const resultAmount = conversionData?.rates
     ? Object.values(conversionData.rates)[0]
-    : prevConversionDataRef.current?.rates[0] || 0;
+    : prevConversionDataRef.current?.rates[0];
+    
+  const filteredCurrencies = (currencies: string[], symbol: string) =>
+    currencies.filter((currency) => currency !== symbol);
+
   return (
     <Layout>
       {symbolData && (
@@ -70,7 +74,10 @@ const Main = () => {
               amount={amount}
               isDisabled={false}
               changeAmount={handleChangeAmount}
-              currencies={Object.keys(symbolData)}
+              currencies={filteredCurrencies(
+                Object.keys(symbolData),
+                quoteCurrency
+              )}
               onChange={handleBaseCurrencyChange}
             />
 
@@ -87,7 +94,10 @@ const Main = () => {
               value={quoteCurrency}
               amount={resultAmount}
               isDisabled={true}
-              currencies={Object.keys(symbolData)}
+              currencies={filteredCurrencies(
+                Object.keys(symbolData),
+                baseCurrency
+              )}
               onChange={handleQuoteCurrencyChange}
             />
           </div>
